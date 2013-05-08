@@ -1,3 +1,9 @@
+rsync (3.0.9-2rax2) lucid; urgency=low
+
+  * Updated patch to limit destination drive fullness
+
+ -- Gregory Holt <gholt@rackspace.com>  Wed, 08 May 2013 18:40:00 +0000
+
 rsync (3.0.9-2rax1) lucid; urgency=low
 
   * Patch to limit destination drive fullness
