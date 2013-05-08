@@ -1,5 +1,5 @@
 diff --git a/receiver.c b/receiver.c
-index d90fa25..859c728 100644
+index d90fa25..7922b1c 100644
 --- a/receiver.c
 +++ b/receiver.c
 @@ -19,6 +19,7 @@
@@ -10,7 +10,7 @@ index d90fa25..859c728 100644
  #include "rsync.h"
  
  extern int verbose;
-@@ -710,6 +711,19 @@ int recv_files(int f_in, char *local_name)
+@@ -710,6 +711,20 @@ int recv_files(int f_in, char *local_name)
  					       dflt_perms, exists);
  		}
  
@@ -22,8 +22,9 @@ index d90fa25..859c728 100644
 +			off_t limit = fsbuf.f_blocks * fsbuf.f_frsize - reserve;
 +			if ((used + F_LENGTH(file)) > limit)
 +			{
-+				rprintf(FERROR, "Filesystem too full for new files!");
-+				exit_cleanup(RERR_FILEIO)
++				rprintf(FERROR, "Filesystem too full for new files! %s\n",
++					file->dirname);
++				exit_cleanup(RERR_FILEIO);
 +			}
 +		}
 +
