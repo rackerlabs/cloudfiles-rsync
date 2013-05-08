@@ -1,5 +1,5 @@
 diff --git a/receiver.c b/receiver.c
-index d90fa25..7922b1c 100644
+index d90fa25..03f56d4 100644
 --- a/receiver.c
 +++ b/receiver.c
 @@ -19,6 +19,7 @@
@@ -23,7 +23,7 @@ index d90fa25..7922b1c 100644
 +			if ((used + F_LENGTH(file)) > limit)
 +			{
 +				rprintf(FERROR, "Filesystem too full for new files! %s\n",
-+					file->dirname);
++					full_fname(fname));
 +				exit_cleanup(RERR_FILEIO);
 +			}
 +		}
