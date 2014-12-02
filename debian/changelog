@@ -1,4 +1,4 @@
-rsync (3.0.9.1) stable; urgency=low
+rsync (3.0.9-3rax) stable; urgency=low
 
   * Updating package version only
 
